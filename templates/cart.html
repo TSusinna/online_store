@@ -1,17 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Your Cart</h2>
-<ul>
-    {% for item in cart.items.values() %}
-    <li>
-        <h3>{{ item.product.name }}</h3>
-        <p>Quantity: {{ item.quantity }}</p>
-        <p>Price: ${{ item.product.price }}</p>
-    </li>
-    {% endfor %}
-</ul>
-<p>Total: ${{ cart.calculate_total() }}</p>
-<form action="{{ url_for('checkout') }}" method="post">
-    <button type="submit">Checkout</button>
-</form>
+<div class="cart-container">
+    <ul class="cart-items">
+        {% for item in cart.items.values() %}
+        <li class="cart-item">
+            <div>
+                <h3>{{ item.product.name }}</h3>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p>Price: ${{ item.product.price }}</p>
+            </div>
+            <p>Total: ${{ item.product.price * item.quantity }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="cart-summary">
+        <h3>Total: ${{ cart.calculate_total() }}</h3>
+        <form method="post">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card_number" placeholder="1234 5678 9012 3456" required>
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" name="expiry_date" placeholder="MM/YY" required>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            <button type="submit" class="pay-button">Pay Now</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

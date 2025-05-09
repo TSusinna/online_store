@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Online Store</h1>
-        <nav>
-            <a href="{{ url_for('catalog') }}">Catalog</a>
-            <a href="{{ url_for('view_cart') }}">Cart</a>
-            <a href="{{ url_for('admin') }}">Admin</a>
+    <header class="header">
+        <img src="{{ url_for('static', filename='../static/logo.png') }}" alt="Store Logo" class="store-logo">
+        <h1 class="store-title">Online Store</h1>
+        <nav class="nav-menu">
+            <a href="{{ url_for('catalog') }}" class="nav-link">Catalog</a>
+            <a href="{{ url_for('view_cart') }}" class="nav-link">Cart</a>
+            <a href="{{ url_for('admin') }}" class="nav-link">Admin</a>
         </nav>
     </header>
     <main>
