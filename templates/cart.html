@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Cart</h2>
+<ul>
+    {% for item in cart.items.values() %}
+    <li>
+        <h3>{{ item.product.name }}</h3>
+        <p>Quantity: {{ item.quantity }}</p>
+        <p>Price: ${{ item.product.price }}</p>
+    </li>
+    {% endfor %}
+</ul>
+<p>Total: ${{ cart.calculate_total() }}</p>
+<form action="{{ url_for('checkout') }}" method="post">
+    <button type="submit">Checkout</button>
+</form>
+{% endblock %}

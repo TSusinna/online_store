@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Panel</h2>
+<form method="post">
+    <input type="number" name="product_id" placeholder="Product ID" required>
+    <input type="text" name="name" placeholder="Name" required>
+    <textarea name="description" placeholder="Description" required></textarea>
+    <input type="number" name="price" placeholder="Price" step="0.01" required>
+    <input type="number" name="stock" placeholder="Stock" required>
+    <input type="text" name="image_url" placeholder="Image URL" required>
+    <button type="submit">Add Product</button>
+</form>
+<ul>
+    {% for product in products %}
+    <li>{{ product }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
