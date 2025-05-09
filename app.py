@@ -63,7 +63,6 @@ def catalog():
 @app.route('/cart', methods=['GET', 'POST'])
 def view_cart():
     if request.method == 'POST':
-        # Simulate payment processing
         cart.clear()
         return redirect(url_for('catalog'))
     return render_template('cart.html', cart=cart)
@@ -100,7 +99,6 @@ def admin():
             image.save(image_path)
             image_url = f"static/images/{filename}"
 
-            # Add product to the database
             new_product = Product(id=product_id, name=name, description=description, price=price, stock=stock, image_url=image_url)
             db.session.add(new_product)
             db.session.commit()

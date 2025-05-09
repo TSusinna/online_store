@@ -58,7 +58,6 @@
     padding: 20px;
 }
 
-/* Product card styling */
 .product-card {
     display: flex;
     flex-direction: column;
@@ -78,7 +77,6 @@
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Product image styling */
 .product-image {
     width: 100%;
     height: 150px; /* Fixed height for images */
@@ -87,7 +85,6 @@
     margin-bottom: 10px;
 }
 
-/* Button styling */
 button {
     background-color: #007bff;
     color: white;
@@ -133,7 +130,6 @@ form button:hover {
     background-color: #0056b3;
 }
 
-/* Product list styling */
 .product-list {
     list-style: none;
     padding: 0;
@@ -179,7 +175,6 @@ form button:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Cart items list */
 .cart-items {
     list-style: none;
     padding: 0;
@@ -199,7 +194,6 @@ form button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Cart summary */
 .cart-summary {
     width: 100%;
     text-align: center;
@@ -211,7 +205,6 @@ form button:hover {
     color: #333;
 }
 
-/* Payment form */
 form {
     display: flex;
     flex-direction: column;
